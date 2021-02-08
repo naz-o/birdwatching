@@ -15,6 +15,8 @@ python manage.py shell
 # Create a new Basictest.
 >>> r = Basictest(full_name='John Smith')
 
+
+
 # Save the object into the database. You have to call save() explicitly.
 >>> r.save()
 
