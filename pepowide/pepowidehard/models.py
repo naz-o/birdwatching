@@ -5,7 +5,8 @@ class Basictest(models.Model):
     def __str__(self):
         return self.full_name
 """
->>> from news.models import Basictest
+python manage.py shell
+>>> from pepowidehard.models import Basictest
 
 
 >>> Basictest.objects.all()
