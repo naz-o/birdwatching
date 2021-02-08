@@ -55,7 +55,7 @@ ROOT_URLCONF = 'pepowide.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['website'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

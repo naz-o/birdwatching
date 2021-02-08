@@ -25,7 +25,7 @@ python manage.py shell
 1
 
 # Django provides a rich database lookup API.
->>> Basictest.objects.get(id=1)
+>>> Basictest.objects.get(id=2)
 <Basictest: John Smith>
 >>> Basictest.objects.get(full_name__startswith='John')
 <Basictest: John Smith>
