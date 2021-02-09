@@ -1,19 +1,22 @@
 from django.db import models
 
-class Basictest(models.Model):
-    full_name = models.CharField(max_length=70)
+class djangodb(models.Model):
+    temperature= models.CharField(max_length=5)
+    humidity = models.CharField(max_length=5)
+    datum = models.DateTimeField('date published')
+    bild = models.ImageField(upload_to='images')
     def __str__(self):
-        return self.full_name
+        return self.temperature
 """
 python manage.py shell
->>> from pepowidehard.models import Basictest
+>>> from pepowidehard.models import djangodb
 
 
->>> Basictest.objects.all()
+>>> djangodb.objects.all()
 <QuerySet []>
 
-# Create a new Basictest.
->>> r = Basictest(full_name='John Smith')
+# Create a new djangodb.
+>>> r = djangodb(full_name='John Smith')
 
 
 
@@ -25,12 +28,12 @@ python manage.py shell
 1
 
 # Django provides a rich database lookup API.
->>> Basictest.objects.get(id=2)
-<Basictest: John Smith>
->>> Basictest.objects.get(full_name__startswith='John')
-<Basictest: John Smith>
->>> Basictest.objects.get(full_name__contains='mith')
-<Basictest: John Smith>
->>> Basictest.objects.get(id=2)
+>>> djangodb.objects.get(id=2)
+<djangodb: John Smith>
+>>> djangodb.objects.get(full_name__startswith='John')
+<djangodb: John Smith>
+>>> djangodb.objects.get(full_name__contains='mith')
+<djangodb: John Smith>
+>>> djangodb.objects.get(id=2)
 Traceback (most recent call last)
 """

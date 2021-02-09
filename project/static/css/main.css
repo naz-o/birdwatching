@@ -1,6 +1,6 @@
   body{
 
-    background-color: #3792cb;
+    background-color: black;
     margin-left: 100px;
   }
 
@@ -78,7 +78,7 @@
 
   .current {
     width: 300px;
-    background: white;
+    background: red;
   }
 
 
