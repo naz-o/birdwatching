@@ -28,9 +28,15 @@ body{
   margin-right: auto;
 }
 
+#gbild {
+  opacity: 0.8;
+  border-radius: 2%
+}
 #gbild:hover {
-  width: 110%;
-  height: 110%;
+  border: solid 3px rgb(27, 146, 177);
+  border-radius: 2%;
+  opacity: 1;
+  transition-duration: 0s;
 }
 
 .gallery_layout{
