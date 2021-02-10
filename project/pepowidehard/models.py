@@ -4,9 +4,9 @@ class djangodb(models.Model):
     temperature= models.CharField(max_length=5)
     humidity = models.CharField(max_length=5)
     datum = models.DateTimeField('date published')
-    bild = models.ImageField(upload_to='images')
-    def __str__(self):
-        return self.temperature
+    bild = models.ImageField(upload_to='posts/', default='posts/frx.png')
+    #def __str__(self):
+        #return self.temperature
 """
 python manage.py shell
 >>> from pepowidehard.models import djangodb
