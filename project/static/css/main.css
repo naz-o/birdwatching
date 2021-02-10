@@ -49,10 +49,12 @@ div.desc {
 
 
 .top{
+  padding-top: 10px;
   text-align: center;
-  border: 1px solid black;
   width: 100%;
   background-color: #93d0f2;
+  height: 90px;
+  box-shadow: 1px 1px 14px  #365d73;
 
 }
 
