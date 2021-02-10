@@ -28,6 +28,11 @@ body{
   margin-right: auto;
 }
 
+#gbild:hover {
+  width: 110%;
+  height: 110%;
+}
+
 .gallery_layout{
 
   display: grid;
