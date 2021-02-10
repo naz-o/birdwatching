@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <title>Birdwatch Galery</title>
 <link rel="stylesheet" href="{% static '/css/main.css' %}">
-<link rel="shortcut icon" type="image/jpg" href="left.svg"/>
+<link rel="shortcut icon" type="image/jpg" href="{% static '/images/icons/left.svg' %}"/>
 
 </head>
 <!-- sooooo..... no head?! -->
@@ -14,7 +14,7 @@
 <div class="header">
 <ul>
 
-  <a href="/#"> <img alt="Back" src="icons\left.svg" width="50" height="50"></a>
+  <a href="/#"> <img alt="Back" src="{% static '/images/icons/left.svg' %}" width="50" height="50"></a>
 
 <li>
   <h1>Gallery</h1>
@@ -28,25 +28,9 @@
 <div class="gallery">
       <img src="{{x.bild.url}}" width="430" height="320">
     </a>
-    <div class="desc">Time & Date:</div>
+    <div class="desc">Time & Date:{{x.datum}}</div>
 </div>
   {% endfor %}
-<div class="gallery">
-
-      <img src="pictures/PepoG.png" width="430" height="320">
-    </a>
-    <div class="desc">Time & Date:</div>
-</div>
-
-<div class="gallery">
-
-      <img src="pictures/PepoG.png" width="430" height="320">
-    </a>
-    <div class="desc">Time & Date:</div>
-</div>
-
-</div>
-
 
 </body>
 </html>
