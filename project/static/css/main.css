@@ -13,7 +13,7 @@ body{
     width: 100%;
     position: fixed;
     box-shadow: 1px 1px 14px  black;
-    background: #13a0cc;
+    background: #13a3cc;
     height: 100px;
     z-index: 9999;
 
@@ -40,7 +40,7 @@ body{
     border-radius: 2%
   }
   #gbild:hover {
-    border: solid 3px rgb(27, 146, 177);
+    border: solid 3px #13a3cc;
     border-radius: 2%;
     opacity: 1;
     transition-duration: 0s;
