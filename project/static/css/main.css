@@ -75,10 +75,11 @@ body{
 /*----------------------- Main Start -------------------------*/
   .top{
     padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
     width: 100%;
     background-color: #13a0cc;
-    height: 90px;
+    height: auto;
     box-shadow: 1px 1px 14px  black;
 
   }
