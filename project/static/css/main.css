@@ -15,6 +15,7 @@ body{
     box-shadow: 1px 1px 14px  black;
     background: #13a0cc;
     height: 100px;
+    z-index: 9999;
 
   }
 
