@@ -1,3 +1,7 @@
+*{
+  font-family: Quicksand;
+
+}
 
 body{
 
@@ -32,6 +36,7 @@ body{
   .header ul h1{
     color: black;
     text-shadow: 1px 1px #6bcde9;
+    font-family: Quicksand-Bold;
 
   }
 
@@ -81,6 +86,7 @@ body{
   .top ul h1{
     color: black;
     text-shadow: 1px 1px #6bcde9;
+    font-family: Quicksand-Bold;
 
   }
 
