@@ -205,3 +205,38 @@ body{
 
 
 /*-------------------Button End------------------*/
+
+/*-------------------Data Start------------------*/
+/*-------------------Chart Start------------------*/
+
+.wrapper-chart{
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 150px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data{
+  width: auto;
+  height: auto;
+  background: #34b5da;
+  border: 3px solid #0a84a9;
+  box-shadow: 5px 5px 20px black;
+  text-shadow: 1px 1px #6bcde9;
+
+}
+.canvasjs-chart-credit{
+  display: none
+}
+
+/*-------------------Chart End--------------------*/
+
+
+
+
+
+
+
+/*-------------------Data End--------------------*/
