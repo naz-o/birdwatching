@@ -1,4 +1,7 @@
 from django.db import models
+from random import randint
+from django.utils import timezone
+import datetime
 
 class djangodb(models.Model):
     temperature= models.CharField(max_length=5)
@@ -7,6 +10,14 @@ class djangodb(models.Model):
     bild = models.ImageField(upload_to='posts/', default='posts/frx.png')
     #def __str__(self):
         #return self.temperature
+
+def generateRandom():
+    amount = 30
+    while  amount != 0:
+        rentry = djangodb(temperature=str(randint(0,20)+"°C"),humidity=str(randint(0,100)+"%"),
+                    datum=timezone.now()-datetime.timedelta(days=randint(1,30)))
+        rentry.save
+        amount = amount - 1
 """
 python manage.py shell
 >>> from pepowidehard.models import djangodb
