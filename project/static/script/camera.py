@@ -6,6 +6,7 @@ from signal import pause
 import datetime
 import board
 import adafruit_dht
+
 # Example to find average of list
 
 #from pepowidehard.models import djangodb
@@ -14,6 +15,7 @@ import adafruit_dht
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
 #dbobject =  djangodb()
+buzzer = Buzzer(17)
 camera = PiCamera()
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
@@ -64,7 +66,6 @@ def takephoto():
     print('A photo has been taken')
     sleep(5)
 
-#assign a function that runs when motion is detected
 
 #    except RuntimeError as error:
         # Errors happen fairly often, DHT's are hard to read, just keep going
