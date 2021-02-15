@@ -15,3 +15,8 @@ def data_view(request):
     return render(request,"data.html")
 def htag(request):
     return render(request,"main.html")
+def buzzing(request):
+    #buzzer.toggle()
+    print("bruh")
+    return render(request,"main.html")
+print("bruh")
