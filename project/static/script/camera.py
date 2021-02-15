@@ -15,7 +15,7 @@ import adafruit_dht
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
 #dbobject =  djangodb()
-buzzer = Buzzer(17)
+
 camera = PiCamera()
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
