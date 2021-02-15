@@ -159,13 +159,13 @@ body{
 
 
   #buzzer {
+    cursor: pointer;
     position: relative;
     overflow: hidden;
 
   }
 
   #buzzer a {
-    cursor: pointer;
     position: relative;
     left: 0;
     transition: all .35s ease-Out;

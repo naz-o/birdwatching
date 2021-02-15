@@ -9,5 +9,5 @@ urlpatterns = [
     path('', views.index),
     path('galery', views.galery_view),
     path('data', views.data_view),
-    path('buzzing', views.buzzer_button, name="script"),
+    #path('buzzing', views.buzzer_button, name="script"),
 ]
