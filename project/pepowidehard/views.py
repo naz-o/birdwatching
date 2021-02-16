@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import djangodb
-#from gpiozero import Buzzer
+"""
+from gpiozero import Buzzer
 from time import sleep
+buzzer = Buzzer(17)
+"""
 
-#buzzer = Buzzer(17)
 all = djangodb.objects.all()
 data= {
     "data": all
