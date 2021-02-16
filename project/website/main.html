@@ -51,14 +51,14 @@
 
 </div>
 
-<!--- ................BUTTON START............ --->
+<!-- ................BUTTON START............ -->
 
 <div id="container">
 
 
 <div class="button" id="buzzer">
     <div id="dub-arrow"><img src="{% static '/images/icons/audio.svg' %}" alt="" /></div>
-    <a>Buzz</a>
+    <a id="clickMe">Buzz</a>
   </div>
 
 <div class="button" id="buzzer">
@@ -72,21 +72,18 @@
   </div>
 
   
-<button type="button" class="open" id="open" onclick="" >Button</button>
 
 
 </div>
 {% csrf_token %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-
-$(document).ready(function() {
-
-$("#button").click(function(){
- $.ajax({
-      url:"project/static/script/buzz.py", success: function(){alert("DONE");}
- });
-  });
-});
+<script>
+document.getElementById("clickMe").onclick = function () { 
+  
+  alert('hello!'); 
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "{% static '/script/buzz.py' %}", true);
+  xhttp.send();
+};
 
 
 </script>

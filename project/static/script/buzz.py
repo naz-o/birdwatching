@@ -1,14 +1,14 @@
-#from gpiozero import Buzzer
+
+from gpiozero import Buzzer
 from time import sleep
 import os
-#buzzer = Buzzer(17)
+buzzer = Buzzer(17)
 
 def buzzer_button():
     print("buzzer ist on")
-    print(str(request))
-    #buzzer.on()
+    buzzer.on()
     sleep(1)
-    #buzzer.off()
+    buzzer.off()
     print("buzzer ist off")
-    os.system("atom")
+    os.system("echo hurensohnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
 buzzer_button()
