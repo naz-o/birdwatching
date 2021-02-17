@@ -9,9 +9,10 @@ import adafruit_dht
 # Example to find average of list
 import os
 import sys
+import django
 sys.path.append("/project/")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my-proj.settings')
-#django.setup()
+django.setup()
 from django.conf import settings
 
 from pepowidehard.models import djangodb
