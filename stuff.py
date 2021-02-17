@@ -9,6 +9,7 @@ import adafruit_dht
 # Example to find average of list
 import os
 import sys
+import django
 sys.path.append(
     os.path.join(os.path.dirname(__file__), 'pepowide')
 )
