@@ -7,7 +7,6 @@ import datetime
 import board
 import adafruit_dht
 # Example to find average of list
-import datetime
 import os
 import sys
 import django
@@ -39,8 +38,9 @@ def start_camera():
     camera.start_preview()
 
 #image image names
-i = 0
-
+file = open("test.txt","r")
+i = file.read()
+file.close()
 
 def stop_camera():
     camera.stop_preview()
@@ -50,10 +50,21 @@ def stop_camera():
 #take photo when motion is detected
 def takephoto():
     global i
-    i = i + 1
+    try:
+        print(i)
+        i = int(i)
+        i = i +1
+        file = open("test.txt","w")
+        file.write(str(i))
+        file.close()
+    except:
+        i = 1
+        file = open("test.txt","w")
+        file.write(str(i))
+        file.close()
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
-    dbobject.bild = 'posts/image%s.jpg' % i
+    djangodb.bild = 'posts/image%s.jpg' % i
     a = 0
     temperatureA=[]
     humidityA=[]
@@ -70,15 +81,13 @@ def takephoto():
             print(error)
             continue
     avg = sum(temperatureA)/len(temperatureA)
-    
     dbobject.temperature = str(avg)
     avg2 = sum(humidityA)/len(humidityA)
     dbobject.humidity = str(avg2)
-    dbobject.datum = datetime.datetime.now()
     dbobject.save()
     print("Saved data the id is{}".format(str(dbobject.id)))
-    print("The average Temperature is ", round(avg,2))
-    print("The average Humidity is ", round(avg2,2))
+    print("The average Temperature is", round(avg,2))
+    print("The average Humidity is", round(avg2,2))
     print('A photo has been taken')
     sleep(5)
 
