@@ -72,6 +72,8 @@ def takephoto():
     dbobject.temperature = str(avg)
     avg2 = sum(humidityA)/len(humidityA)
     dbobject.humidity = str(avg2)
+    dbobject.save()
+    print("Saved data the id is{}".format(str(dbobject.id)))
     print("The average Temperature is", round(avg,2))
     print("The average Humidity is", round(avg2,2))
     print('A photo has been taken')
