@@ -30,8 +30,6 @@ dbobject =  djangodb()
 camera = PiCamera()
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
-dbobject.temperature = str(temperature_c)
-dbobject.humidity = str(humidity)
 
 #camera rotation falls die cam upside down fotografiert
 camera.rotation = 180
@@ -71,7 +69,9 @@ def takephoto():
             print(error)
             continue
     avg = sum(temperatureA)/len(temperatureA)
+    dbobject.temperature = str(avg)
     avg2 = sum(humidityA)/len(humidityA)
+    dbobject.humidity = str(avg2)
     print("The average Temperature is", round(avg,2))
     print("The average Humidity is", round(avg2,2))
     print('A photo has been taken')
