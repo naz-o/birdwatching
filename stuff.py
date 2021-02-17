@@ -11,7 +11,7 @@ import os
 import sys
 import django
 sys.path.append(
-    os.path.join(os.path.dirname(__file__), 'pepowide')
+    os.path.join(os.path.dirname(__file__), 'project/pepowide')
 )
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pepowide.settings")
 django.setup()
