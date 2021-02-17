@@ -10,7 +10,7 @@ import adafruit_dht
 import os
 import sys
 import django
-sys.path.append("/project/")
+sys.path.append("/project/pepowide")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pepowide.settings')
 django.setup()
 from django.conf import settings
