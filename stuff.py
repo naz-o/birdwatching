@@ -51,8 +51,8 @@ def takephoto():
     global i
     i = i + 1
     camera.capture('/extdrive/image%s.jpg' % i)
-    camera.capture('/media/posts/image%s.jpg' % i)
-    djangodb.bild = '/media/posts/image%s.jpg' % i
+    camera.capture('/project/media/posts/image%s.jpg' % i)
+    djangodb.bild = '/project/media/posts/image%s.jpg' % i
     a = 0
     temperatureA=[]
     humidityA=[]
