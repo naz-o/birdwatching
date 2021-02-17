@@ -11,7 +11,7 @@ import os
 import sys
 import django
 sys.path.append("/project/")
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my-proj.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pepowide.settings')
 django.setup()
 from django.conf import settings
 
