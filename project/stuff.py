@@ -8,7 +8,7 @@ import board
 import adafruit_dht
 # Example to find average of list
 
-#from pepowidehard.models import djangodb
+from pepowidehard.models import djangodb
 
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
