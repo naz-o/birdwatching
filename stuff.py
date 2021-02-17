@@ -84,8 +84,6 @@ def takephoto():
     #    print(error.args[0])
     #    time.sleep(2.0)
     #    continue
-#while True:
-    #pir.wait_for_motion()
-    #takephoto()
-pir.wait_for_motion()
-takephoto()
+while True:
+    pir.wait_for_motion()
+    takephoto()
