@@ -13,12 +13,12 @@ import adafruit_dht
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
-#dbobject =  djangodb()
+dbobject =  djangodb()
 camera = PiCamera()
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
-#dbobject.temperature = str(temperature_c)
-#dbobject.humidity = str(humidity)
+dbobject.temperature = str(temperature_c)
+dbobject.humidity = str(humidity)
 
 #camera rotation falls die cam upside down fotografiert
 camera.rotation = 180
@@ -40,8 +40,8 @@ def takephoto():
     global i
     i = i + 1
     camera.capture('/extdrive/image%s.jpg' % i)
-    #camera.capture('/project/media/posts/image%s.jpg' % i)
-    #djangodb.bild = posts/image%s.jpg %i)
+    camera.capture('/media/posts/image%s.jpg' % i)
+    djangodb.bild = posts/image%s.jpg %i)
     a = 0
     temperatureA=[]
     humidityA=[]
@@ -71,8 +71,8 @@ def takephoto():
     #    print(error.args[0])
     #    time.sleep(2.0)
     #    continue
-while True:
-    pir.wait_for_motion()
-    takephoto()
-    
-
+#while True:
+    #pir.wait_for_motion()
+    #takephoto()
+pir.wait_for_motion()
+takephoto()
