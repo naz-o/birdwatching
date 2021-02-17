@@ -7,8 +7,19 @@ import datetime
 import board
 import adafruit_dht
 # Example to find average of list
+import os
+import sys
+sys.path.append(
+    os.path.join(os.path.dirname(__file__), 'pepowide')
+)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pepowide.settings")
+
+from django.conf import settings
 
 from pepowidehard.models import djangodb
+
+
+
 
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
