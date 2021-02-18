@@ -5,11 +5,11 @@ from random import randint
 #import board
 #import adafruit_dht
 #dhtDevice = adafruit_dht.DHT22(board.D2)
-"""
+
 from gpiozero import Buzzer
 from time import sleep
 buzzer = Buzzer(17)
-"""
+
 
 all = djangodb.objects.all()
 data= {
@@ -42,8 +42,13 @@ def getdatahum(request):
     return HttpResponse(str(randint(0,100)) + "%")
 
 def buzzer_button(request):
-   # buzzer.on()
+    buzzer.on()
     print("Buzzer on")
+<<<<<<< HEAD
     #sleep(1)
     #buzzer.off()
+=======
+    sleep(1)
+    buzzer.off()
+>>>>>>> f392bfbadeab9498507f1f33eccd12c562605013
     return HttpResponse("Did the buzzer lmao")
