@@ -42,7 +42,7 @@ def getdatahum(request):
     return HttpResponse(str(randint(0,100)) + "%")
 
 def buzzer_button(request):
-   # buzzer.on()
+    #buzzer.on()
     print("Buzzer on")
     #sleep(1)
     #buzzer.off()

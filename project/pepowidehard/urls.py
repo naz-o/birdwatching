@@ -12,4 +12,5 @@ urlpatterns = [
     path('getdatatemp', views.getdatatemp),
     path('getdatahum', views.getdatahum),
     path('buzzing', views.buzzer_button),
+    #path('B')
 ]
