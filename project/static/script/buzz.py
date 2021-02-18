@@ -10,5 +10,6 @@ def buzzer_button():
     sleep(1)
     buzzer.off()
     print("buzzer ist off")
-    os.system("echo hurensohnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
+    os.system("atom")
+
 buzzer_button()

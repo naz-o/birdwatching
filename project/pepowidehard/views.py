@@ -19,13 +19,12 @@ def data_view(request):
     return render(request,"data.html")
 def htag(request):
     return render(request,"main.html")
-    """
+"""
 def buzzer_button(request):
     print("buzzer ist on")
     print(str(request))
     #buzzer.on()
-    sleep(1)
     #buzzer.off()
     print("buzzer ist off")
-    return render(request,"main.html")
-    """
+    return redirect("/", permanent=True)
+"""

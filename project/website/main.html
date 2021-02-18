@@ -77,13 +77,6 @@
 </div>
 {% csrf_token %}
 <script>
-document.getElementById("clickMe").onclick = function () { 
-  
-  alert('hello!'); 
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "{% static '/script/buzz.py' %}", true);
-  xhttp.send();
-};
 
 
 </script>
