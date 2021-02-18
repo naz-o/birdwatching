@@ -30,14 +30,11 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		type: "bar",
 		dataPoints: [
 			{% for x in data %}
-			var x = {{x.temperature}}.replace("°C",'')
-	      		{ label: "test", y: x },
+	      		{ label: "{{x.datum|date:'M d, Y h:m' }}", y: {{x.temperature}} },
 			{% endfor %}
 /*
 String({{x.datum}})
-bro was jetzt
-xd
-lol
+it works!
 { label: "13.21.21 01:21\npm", y: -3.35 },
 
 */
