@@ -23,7 +23,8 @@ dview = {
 current = {
     "humidity": realtimehumidity,
     "temperature": realtimetemperature,
-    "data": all
+    "data": all,
+    "latestpicture": djangodb.objects.last()
 }
 def index(request):
     return render(request,"main.html",current)
@@ -45,4 +46,6 @@ def buzzer_button(request):
     print("Buzzer on")
     sleep(1)
     buzzer.off()
+    #sleep(1)
+    #buzzer.off()
     return HttpResponse("Did the buzzer lmao")
