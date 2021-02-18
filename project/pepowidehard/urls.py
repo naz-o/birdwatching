@@ -11,5 +11,5 @@ urlpatterns = [
     path('data', views.data_view),
     path('getdatatemp', views.getdatatemp),
     path('getdatahum', views.getdatahum),
-    #path('buzzing', views.buzzer_button, name="script"),
+    path('buzzing', views.buzzer_button),
 ]

@@ -33,21 +33,15 @@ def data_view(request):
     return render(request,"data.html",dview)
 def htag(request):
     return render(request,"main.html")
-<<<<<<< HEAD
 def getdatatemp(request):
     #temperature = dhtDevice.temperature
     return HttpResponse(str(randint(0,20)) + "C")
 def getdatahum(request):
     #humidity = dhtDevice.humidity
     return HttpResponse(str(randint(0,100)) + "%")
-=======
-"""
 def buzzer_button(request):
-    print("buzzer ist on")
-    print(str(request))
-    #buzzer.on()
+   # buzzer.on()
+    print("Buzzer on")
+    #sleep(1)
     #buzzer.off()
-    print("buzzer ist off")
-    return redirect("/", permanent=True)
-"""
->>>>>>> bea00054b998f959c34ff96857244991eb0d448c
+    return HttpResponse("Did the buzzer lmao")
