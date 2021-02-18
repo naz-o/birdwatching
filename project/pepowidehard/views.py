@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import djangodb
+from random import randint
+#import board
+#import adafruit_dht
+#dhtDevice = adafruit_dht.DHT22(board.D2)
 """
 from gpiozero import Buzzer
 from time import sleep
@@ -26,12 +30,9 @@ def data_view(request):
     return render(request,"data.html",dview)
 def htag(request):
     return render(request,"main.html")
-"""
-def buzzer_button(request):
-    print("buzzer ist on")
-    print(str(request))
-    #buzzer.on()
-    #buzzer.off()
-    print("buzzer ist off")
-    return redirect("/", permanent=True)
-"""
+def getdatatemp(request):
+    #temperature = dhtDevice.temperature
+    return HttpResponse(str(randint(0,20)) + "C")
+def getdatahum(request):
+    #humidity = dhtDevice.humidity
+    return HttpResponse(str(randint(0,100)) + "%")
