@@ -14,13 +14,15 @@ data= {
 realtimehumidity = "15"
 realtimetemperature = "69"
 dview = {
+    "data": all
+}
+current = {
     "humidity": realtimehumidity,
     "temperature": realtimetemperature,
     "data": all
 }
-
 def index(request):
-    return render(request,"main.html")
+    return render(request,"main.html",current)
 def galery_view(request):
     return render(request,"galery.html",data)
 def data_view(request):
