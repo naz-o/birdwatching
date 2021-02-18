@@ -40,16 +40,9 @@ def getdatahum(request):
     #humidity = dhtDevice.humidity
     return HttpResponse(str(randint(0,100)) + "%")
 
-"""
 def buzzer_button(request):
    # buzzer.on()
     print("Buzzer on")
     #sleep(1)
     #buzzer.off()
-<<<<<<< HEAD
     return HttpResponse("Did the buzzer lmao")
-=======
-    print("buzzer ist off")
-    return redirect("/", permanent=True)
-"""
->>>>>>> 90c84193afad6a4f4932f47a0951cc8ce38693f4
