@@ -43,11 +43,8 @@ def getdatatemp(request):
 def getdatahum(request):
     #humidity = dhtDevice.humidity
     return HttpResponse(str(randint(0,100)) + "%")
-<<<<<<< HEAD
-=======
 
 """
->>>>>>> 90c84193afad6a4f4932f47a0951cc8ce38693f4
 def buzzer_button(request):
    # buzzer.on()
     print("Buzzer on")
