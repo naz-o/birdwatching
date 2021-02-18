@@ -18,22 +18,36 @@ data= {
 realtimehumidity = "15"
 realtimetemperature = "69"
 dview = {
+    "data": all
+}
+current = {
     "humidity": realtimehumidity,
     "temperature": realtimetemperature,
     "data": all
 }
-
 def index(request):
-    return render(request,"main.html")
+    return render(request,"main.html",current)
 def galery_view(request):
     return render(request,"galery.html",data)
 def data_view(request):
     return render(request,"data.html",dview)
 def htag(request):
     return render(request,"main.html")
+<<<<<<< HEAD
 def getdatatemp(request):
     #temperature = dhtDevice.temperature
     return HttpResponse(str(randint(0,20)) + "C")
 def getdatahum(request):
     #humidity = dhtDevice.humidity
     return HttpResponse(str(randint(0,100)) + "%")
+=======
+"""
+def buzzer_button(request):
+    print("buzzer ist on")
+    print(str(request))
+    #buzzer.on()
+    #buzzer.off()
+    print("buzzer ist off")
+    return redirect("/", permanent=True)
+"""
+>>>>>>> bea00054b998f959c34ff96857244991eb0d448c

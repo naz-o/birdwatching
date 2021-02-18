@@ -4,8 +4,6 @@
 <head>
 <meta charset="utf-8">
 <title>Birdwatch Data</title>
-<h1>{{humidity}}</h1>
-<h1>{{temperature}}</h1>
 <link rel="stylesheet" href="{% static '/css/main.css' %}">
 <link rel="shortcut icon" type="image/jpg" href="{% static '/images/icons/left.svg' %}"/>
 
@@ -30,17 +28,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		type: "bar",
 		dataPoints: [
 			{% for x in data %}
-			var x = {{x.temperature}}.replace("°C",'')
-	      		{ label: "test", y: x },
+	      		{ label: "{{x.datum|date:'M d, Y h:m' }}", y: {{x.temperature}} },
 			{% endfor %}
-/*
-String({{x.datum}})
-bro was jetzt
-xd
-lol
-{ label: "13.21.21 01:21\npm", y: -3.35 },
 
-*/
 		]
 	}]
 });
