@@ -62,9 +62,11 @@ def takephoto():
         file = open("test.txt","w")
         file.write(str(i))
         file.close()
+    os.system("sudo service motion stop")
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
     dbobject.bild = 'posts/image{}.jpg'.format(i)
+    os.system("sudo motion -b")
     a = 0
     temperatureA=[]
     humidityA=[]
@@ -99,6 +101,10 @@ def takephoto():
     #    print(error.args[0])
     #    time.sleep(2.0)
     #    continue
+
 while True:
-    pir.wait_for_motion()
-    takephoto()
+    try:
+        pir.wait_for_motion()
+        takephoto()
+    except:
+        print("Debug")
