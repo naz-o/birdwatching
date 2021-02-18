@@ -64,7 +64,7 @@ def takephoto():
         file.close()
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
-    djangodb.bild = 'posts/image%s.jpg' % i
+    dbobject.bild = 'posts/image%s.jpg' % i
     a = 0
     temperatureA=[]
     humidityA=[]
