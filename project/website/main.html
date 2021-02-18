@@ -85,6 +85,14 @@ $(document).ready(function(){
   $.get( "/getdatahum", function( data ) {
     $( ".resulthum" ).html( data );
   });
+
+
+});
+
+$('#clickMe').click(function(){
+      $.get( "/buzzing", function() {
+    alert("did button")
+  });
 });
 </script>
 
@@ -100,6 +108,7 @@ $(document).ready(function(){
 
   <li>Temperature:  {{temperature}}<p class="resulttemp"></p></li>
   <li>Humidity: {{humidity}}<p class="resulthum"></p></li>
+  <li>Humidity: {{humidity}}<p class="buzzing"></p></li>
 
 
   <li>Birds watched:</li>
