@@ -11,12 +11,19 @@ all = djangodb.objects.all()
 data= {
     "data": all
 }
+realtimehumidity = "15"
+realtimetemperature = "69"
+dview = {
+    "humidity": realtimehumidity,
+    "temperature": realtimetemperature
+}
+
 def index(request):
     return render(request,"main.html")
 def galery_view(request):
     return render(request,"galery.html",data)
 def data_view(request):
-    return render(request,"data.html")
+    return render(request,"data.html",dview)
 def htag(request):
     return render(request,"main.html")
 """
