@@ -33,10 +33,6 @@ def data_view(request):
     return render(request,"data.html",dview)
 def htag(request):
     return render(request,"main.html")
-<<<<<<< HEAD
-=======
-
->>>>>>> 90c84193afad6a4f4932f47a0951cc8ce38693f4
 def getdatatemp(request):
     #temperature = dhtDevice.temperature
     return HttpResponse(str(randint(0,20)) + "C")
