@@ -79,10 +79,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
 $(document).ready(function(){
-
+  while(true){
   $.get( "/getdatatemp", function( data ) {
     $( ".resulttemp" ).html( data );
   });
+  $.get( "/getdatahum", function( data ) {
+    $( ".resulthum" ).html( data );
+  });
+  }
 });
 </script>
 
@@ -95,8 +99,8 @@ $(document).ready(function(){
   <div class=current>
 <ul>
   <h3>Current</h3>
-  <li>Temperature:<p class="result"></p></li>
-  <li>Humidity:</li>
+  <li>Temperature:<p class="resulttemp"></p></li>
+  <li>Humidity:<p class="resulthum"></p></li>
   <li>Birds watched:</li>
 </ul>
 <ul>
