@@ -23,7 +23,8 @@ dview = {
 current = {
     "humidity": realtimehumidity,
     "temperature": realtimetemperature,
-    "data": all
+    "data": all,
+    "latestpicture": djangodb.objects.last()
 }
 def index(request):
     return render(request,"main.html",current)
