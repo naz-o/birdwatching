@@ -75,6 +75,7 @@
 
 
 </div>
+<<<<<<< HEAD
 {% csrf_token %}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
@@ -87,6 +88,10 @@ $(document).ready(function(){
   });
 });
 </script>
+=======
+
+
+>>>>>>> 90c84193afad6a4f4932f47a0951cc8ce38693f4
 
 <!--- ................BUTTON END............ --->
 
@@ -97,13 +102,11 @@ $(document).ready(function(){
   <div class=current>
 <ul>
   <h3>Current</h3>
-<<<<<<< HEAD
-  <li>Temperature:<p class="resulttemp"></p></li>
-  <li>Humidity:<p class="resulthum"></p></li>
-=======
-  <li>Temperature: {{temperature}}<p id=""></p></li>
-  <li>Humidity: {{humidity}}</li>
->>>>>>> bea00054b998f959c34ff96857244991eb0d448c
+
+  <li>Temperature:  {{temperature}}<p class="resulttemp"></p></li>
+  <li>Humidity: {{humidity}}<p class="resulthum"></p></li>
+
+
   <li>Birds watched:</li>
 </ul>
 <ul>
