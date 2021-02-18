@@ -19,7 +19,8 @@ realtimehumidity = "15"
 realtimetemperature = "69"
 dview = {
     "humidity": realtimehumidity,
-    "temperature": realtimetemperature
+    "temperature": realtimetemperature,
+    "data": all
 }
 
 def index(request):
