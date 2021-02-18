@@ -64,7 +64,7 @@ def takephoto():
         file.close()
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
-    dbobject.bild = 'posts/image%s.jpg' % i
+    dbobject.bild = 'posts/image{}.jpg'.format(i)
     a = 0
     temperatureA=[]
     humidityA=[]
@@ -84,6 +84,7 @@ def takephoto():
     dbobject.temperature = str(avg)
     avg2 = sum(humidityA)/len(humidityA)
     dbobject.humidity = str(avg2)
+    dbobject.datum = datetime.datetime.now()
     dbobject.save()
     print("Saved data the id is{}".format(str(dbobject.id)))
     print("The average Temperature is", round(avg,2))
