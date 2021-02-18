@@ -28,18 +28,19 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	},
 	data: [{
 		type: "bar",
-
 		dataPoints: [
-	      		{ label: "13.21.21 01:21\npm", y: -3.35 },
-	      		{ label: "13.21.21", y: 11 },
-            { label: "13.21.21", y: 5 },
-            { label: "13.21.21", y: 8 },
-            { label: "13.21.21", y: 5.23 },
-            { label: "13.21.21", y: 18.2 },
-            { label: "13.21.21", y: 12.4 },
-            { label: "13.21.21", y: -0.23 },
+			{% for x in data %}
+			var x = {{x.temperature}}.replace("°C",'')
+	      		{ label: "test", y: x },
+			{% endfor %}
+/*
+String({{x.datum}})
+bro was jetzt
+xd
+lol
+{ label: "13.21.21 01:21\npm", y: -3.35 },
 
-
+*/
 		]
 	}]
 });
