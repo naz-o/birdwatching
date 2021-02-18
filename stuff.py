@@ -65,6 +65,8 @@ def takephoto():
         file.close()
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
+    camera.stop_preview()
+    camera = None
     dbobject.bild = 'posts/image{}.jpg'.format(i)
     os.system("sudo motion -b")
     a = 0
