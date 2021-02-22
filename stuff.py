@@ -21,9 +21,9 @@ from django.conf import settings
 from pepowidehard.models import djangodb
 try:
     os.system("sudo service motion stop")
-except:
     print("Motion service is not online")
-
+except:
+    print("wha happened?")
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
