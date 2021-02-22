@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import djangodb
 from random import randint
-import board
-import adafruit_dht
-dhtDevice = adafruit_dht.DHT22(board.D2)
-
+#import board
+#import adafruit_dht
+#dhtDevice = adafruit_dht.DHT22(board.D2)
+"""
 from gpiozero import Buzzer
 from time import sleep
 buzzer = Buzzer(17)
-
+"""
 
 all = djangodb.objects.all()
 data= {
