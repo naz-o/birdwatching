@@ -13,7 +13,7 @@ buzzer = Buzzer(17)
 
 all = djangodb.objects.all()
 data= {
-    "data": all
+    "data":reversed (list(all))
 }
 realtimehumidity = "15"
 realtimetemperature = "69"
