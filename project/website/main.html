@@ -90,11 +90,15 @@ $(document).ready(function(){
   $.get( "/getdatatempavg", function( data ) {
     $( ".resulttempavg" ).html( data );
   });
-    $.get( "/getbirdswatched", function( data ) {
+  $.get( "/getbirdswatched", function( data ) {
     $( ".resultbirdswatched" ).html( data );
   });
+});
 
-
+$('#clickme').click(function(){
+  $.get( "/buzzing", function( data ) {
+    $( ".resultbirdswatched" ).html( data );
+  });
 });
 
 </script>
