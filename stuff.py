@@ -109,6 +109,12 @@ def takephoto():
 while True:
     pir.wait_for_motion()
     print("Waiting for motion sensor to activate:")
+
     os.system("sudo service motion stop")
+    print("stoping motion in 5")
+    sleep(5)
     takephoto()
+
     os.system("sudo motion -b")
+    print("starting motion in 5")
+    sleep(5)
