@@ -18,7 +18,7 @@ data= {
 realtimehumidity = "15"
 realtimetemperature = "69"
 dview = {
-    "data": all
+    "data": all[:5]
 }
 current = {
     "humidity": realtimehumidity,
