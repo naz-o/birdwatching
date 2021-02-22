@@ -75,21 +75,18 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
 
+
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-    class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
-        allow_reuse_address = True
-        daemon_threads = True
 
+    output = StreamingOutput()
+    camera.start_recording(output, format='mjpeg')
+    try:
+        address = ('', 9000)
+        server = StreamingServer(address, StreamingHandler)
+        server.serve_forever()
 
-        output = StreamingOutput()
-        camera.start_recording(output, format='mjpeg')
-        try:
-            address = ('', 9000)
-            server = StreamingServer(address, StreamingHandler)
-            server.serve_forever()
-
-        finally:
-            camera.stop_recording()
+    finally:
+        camera.stop_recording()
