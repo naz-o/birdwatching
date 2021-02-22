@@ -85,6 +85,12 @@ $(document).ready(function(){
   $.get( "/getdatahum", function( data ) {
     $( ".resulthum" ).html( data );
   });
+  $.get( "/getdatahumavg", function( data ) {
+    $( ".resulthumavg" ).html( data );
+  });
+  $.get( "/getdatatempavg", function( data ) {
+    $( ".resulttempavg" ).html( data );
+  });
 
 
 });
@@ -101,17 +107,16 @@ $(document).ready(function(){
 <ul>
   <h3>Current</h3>
 
-  <li>Temperature:  {{temperature}}<p class="resulttemp"></p></li>
-  <li>Humidity: {{humidity}}<p class="resulthum"></p></li>
-  <li>Humidity: {{humidity}}<p class="buzzing"></p></li>
+  <li class="resulttemp">Temperature:</li>
+  <li class="resulthum">>Humidity</li>
 
 
   <li>Birds watched:</li>
 </ul>
 <ul>
   <h3>Average</h3>
-  <li>Temperature:</li>
-  <li>Humidity:</li>
+  <li class="resulttempavg">Temperature:</li>
+  <li class="resulthumavg">Humidity:</li>
 </ul>
 </div>
 </div>
