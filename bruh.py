@@ -1,5 +1,5 @@
 import io
-import picamera
+from picamera import PiCamera
 import logging
 import socketserver
 from threading import Condition
@@ -16,7 +16,8 @@ PAGE="""\
 </body>
 </html>
 """
-camera = picamera.PiCamera(resolution='640x480', framerate=24)
+camera = PiCamera(resolution='640x480', framerate=24)
+
 def startstream():
     class StreamingOutput(object):
         def __init__(self):
@@ -87,7 +88,7 @@ def startstream():
             server.serve_forever()
             
         finally:
-        #    camera.stop_recording()
-            print("ayaya")
+            camera.stop_recording()
+
 def stopstream():
     camera.stop_recording()
