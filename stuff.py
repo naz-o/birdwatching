@@ -106,6 +106,7 @@ def takephoto():
 
 while True:
     try:
+        os.system("sudo service motion stop")
         pir.wait_for_motion()
         takephoto()
     except:
