@@ -21,9 +21,9 @@ from django.conf import settings
 from pepowidehard.models import djangodb
 try:
     os.system("sudo service motion stop")
-except:
     print("Motion service is not online")
-
+except:
+    print("wha happened?")
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
@@ -63,6 +63,7 @@ def takephoto():
         file = open("test.txt","w")
         file.write(str(i))
         file.close()
+        #hm
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
     camera.stop_preview()
@@ -79,8 +80,10 @@ def takephoto():
             temperatureA.append(temperature_c)
             humidityA.append(humidity)
             a = a + 1
+            print("Debug 1")
             sleep(2)
         except RuntimeError as error:
+            print("Debug 2")
             sleep(1)
             print(error)
             continue
@@ -95,7 +98,7 @@ def takephoto():
     print("The average Humidity is", round(avg2,2))
     print('A photo has been taken')
     sleep(5)
-
+    print("Debug 3")
 #assign a function that runs when motion is detected
 
 #    except RuntimeError as error:
@@ -105,8 +108,6 @@ def takephoto():
     #    continue
 
 while True:
-    try:
-        pir.wait_for_motion()
-        takephoto()
-    except:
-        print("Debug")
+    pir.wait_for_motion()
+    print("Waiting for motion sensor to activate:")
+    takephoto()
