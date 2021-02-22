@@ -63,6 +63,7 @@ def takephoto():
         file = open("test.txt","w")
         file.write(str(i))
         file.close()
+        #hm
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
     camera.stop_preview()
