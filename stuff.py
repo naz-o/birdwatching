@@ -99,7 +99,7 @@ def takephoto():
 
 output = StreamingOutput()
 camera.start_recording(output, format='mjpeg')
-address = ('127.0.0.1', 8000)
+address = ('0.0.0.0', 8001)
 server = StreamingServer(address, StreamingHandler)
 server.serve_forever()
 
