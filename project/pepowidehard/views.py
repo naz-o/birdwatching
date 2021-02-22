@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import djangodb
 from random import randint
-#import board
-#import adafruit_dht
-#dhtDevice = adafruit_dht.DHT22(board.D2)
-"""
+import board
+import adafruit_dht
+dhtDevice = adafruit_dht.DHT22(board.D2)
+
 from gpiozero import Buzzer
 from time import sleep
 buzzer = Buzzer(17)
-"""
+
 
 all = djangodb.objects.all()
 data= {
@@ -36,16 +36,16 @@ def data_view(request):
 def htag(request):
     return render(request,"main.html")
 def getdatatemp(request):
-    #temperature = dhtDevice.temperature
-    return HttpResponse("Temperature: "+str(randint(0,20)) + "C")
+    temperature = dhtDevice.temperature
+    return HttpResponse("Temperature: "+str(temperature) + "C")
 def getdatahum(request):
-    #humidity = dhtDevice.humidity
-    return HttpResponse("Humidity: "+str(randint(0,100)) + "%")
+    humidity = dhtDevice.humidity
+    return HttpResponse("Humidity: "+ str(humidity) + "%")
 def buzzer_button(request):
-    #buzzer.on()
+    buzzer.on()
     print("Buzzer on")
-    #sleep(1)
-    #buzzer.off()
+    sleep(1)
+    buzzer.off()
     return HttpResponse("Did the buzzer lmao")
 def getdatatempavg(request):
     templist = list(all.values_list("temperature",flat=True)[:5])
