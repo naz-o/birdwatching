@@ -96,9 +96,9 @@ def takephoto():
     #    time.sleep(2.0)
     #    continue
 
-#camera = PiCamera(resolution='640x480', framerate=24)
+
 output = StreamingOutput()
-#camera.start_recording(output, format='mjpeg')
+camera.start_recording(output, format='mjpeg')
 address = ('', 8000)
 server = StreamingServer(address, StreamingHandler)
 server.serve_forever()
