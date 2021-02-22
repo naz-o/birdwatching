@@ -69,7 +69,6 @@ def takephoto():
     camera.stop_preview()
     camera = None
     dbobject.bild = 'posts/image{}.jpg'.format(i)
-    os.system("sudo motion -b")
     a = 0
     temperatureA=[]
     humidityA=[]
@@ -110,4 +109,6 @@ def takephoto():
 while True:
     pir.wait_for_motion()
     print("Waiting for motion sensor to activate:")
+    os.system("sudo service motion stop")
     takephoto()
+    os.system("sudo motion -b")
