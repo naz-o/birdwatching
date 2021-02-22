@@ -20,12 +20,6 @@ from django.conf import settings
 
 
 from pepowidehard.models import djangodb
-try:
-    os.system("^C")
-    print("stoping motion in 5")
-    sleep(5)
-except:
-    print("wha happened?")
 #GPIO17 #11 Buzzer
 #GPIO18 #12 PIR
 #GPIO2 #3 Temperature and Humidity
@@ -41,10 +35,6 @@ camera.rotation = 180
 def start_camera():
     camera.start_preview()
 
-#image image names
-file = open("test.txt","r")
-i = file.read()
-file.close()
 
 def stop_camera():
     camera.stop_preview()
@@ -116,7 +106,11 @@ server.serve_forever()
 
 while True:
     pir.wait_for_motion()
+<<<<<<< HEAD
     print("Waiting for motion sensor to activate:")
     camera.stop_recording()
     takephoto()
     camera.start_recording()
+=======
+    takephoto()
+>>>>>>> 0c6144001508b7765c9f4fb84d6acbd93103a2d5
