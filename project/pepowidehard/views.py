@@ -5,6 +5,8 @@ from random import randint
 import board
 import adafruit_dht
 dhtDevice = adafruit_dht.DHT22(board.D2)
+from django.urls import reverse
+
 
 from gpiozero import Buzzer
 from time import sleep
@@ -13,12 +15,12 @@ buzzer = Buzzer(17)
 
 all = djangodb.objects.all()
 data= {
-    "data": all
+    "data": reversed(list(all))
 }
 realtimehumidity = "15"
 realtimetemperature = "69"
 dview = {
-    "data": all[:5]
+    "data": all[:20]
 }
 current = {
     "humidity": realtimehumidity,
