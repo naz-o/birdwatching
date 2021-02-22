@@ -41,6 +41,7 @@
 
 
 <div class="gallery_layout">
+{% if data %}
   {% for x in data %}
 <div class="gallery">
       <img id="gbild" src="{{x.bild.url}}" width="430" height="320">
@@ -48,7 +49,7 @@
     <div class="desc">{{x.datum}}</div>
 </div>
   {% endfor %}
-
+{% endif %}
 </body>
 </html>
 

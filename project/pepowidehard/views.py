@@ -13,19 +13,14 @@ buzzer = Buzzer(17)
 
 all = djangodb.objects.all()
 data= {
-    "data":reversed (list(all))
+    "data":reversed(list(all))
 }
-realtimehumidity = "15"
-realtimetemperature = "69"
 dview = {
-    "data": all[:5]
+    "data": all[:20]
 }
 current = {
-    "humidity": realtimehumidity,
-    "temperature": realtimetemperature,
     "data": all,
     "latestpicture": djangodb.objects.last(),
-    "count": len(list(djangodb.objects.values_list()))
 }
 def index(request):
     return render(request,"main.html",current)
