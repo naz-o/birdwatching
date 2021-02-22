@@ -10,6 +10,7 @@ import adafruit_dht
 import os
 import sys
 import django
+from bruh import StreamingOutput, StreamingServer
 sys.path.append(
     os.path.join(os.path.dirname(__file__), 'project')
 )
@@ -65,7 +66,7 @@ def takephoto():
         file = open("test.txt","w")
         file.write(str(i))
         file.close()
-        
+
     camera.capture('./project/media/posts/image%s.jpg' % i)
     dbobject.bild = 'posts/image{}.jpg'.format(i)
     a = 0
@@ -105,15 +106,17 @@ def takephoto():
     #    time.sleep(2.0)
     #    continue
 
+camera = picamera.PiCamera(resolution='640x480', framerate=24)
+output = StreamingOutput()
+camera.start_recording(output, format='mjpeg')
+address = ('', 8000)
+server = StreamingServer(address, StreamingHandler)
+server.serve_forever()
+
+
 while True:
     pir.wait_for_motion()
     print("Waiting for motion sensor to activate:")
-
-    os.system("^C")
-    print("stoping motion in 5")
-    sleep(5)
+    camera.stop_recording()
     takephoto()
-    camera=None
-    os.system("sudo motion")
-    print("starting motion in 5")
-    sleep(5)
+    camera.start_recording()
