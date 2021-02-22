@@ -30,6 +30,7 @@ except:
 #GPIO2 #3 Temperature and Humidity
 dbobject =  djangodb()
 camera = PiCamera()
+print("deebug")
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
 
