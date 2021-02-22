@@ -10,7 +10,7 @@ import adafruit_dht
 import os
 import sys
 import django
-from bruh import StreamingOutput, StreamingServer
+from bruh import StreamingOutput, StreamingServer, StreamingHandler
 sys.path.append(
     os.path.join(os.path.dirname(__file__), 'project')
 )
