@@ -65,3 +65,6 @@ def getdatahumavg(request):
     humsum = sum(humlistint)
     humavg=int(humsum)/len(humlistint)
     return HttpResponse("Humidity: "+str(humavg)+"%")
+def getbirdswatched(request):
+    listcount = len(list(all.values_list()))
+    return HttpResponse("Birds watched: "+str(listcount))

@@ -91,6 +91,9 @@ $(document).ready(function(){
   $.get( "/getdatatempavg", function( data ) {
     $( ".resulttempavg" ).html( data );
   });
+    $.get( "/getbirdswatched", function( data ) {
+    $( ".resultbirdswatched" ).html( data );
+  });
 
 
 });
@@ -111,7 +114,7 @@ $(document).ready(function(){
   <li class="resulthum">>Humidity</li>
 
 
-  <li>Birds watched: {{count}}</li>
+  <li class="resultbirdswatched">Birds watched: </li>
 </ul>
 <ul>
   <h3>Average</h3>
