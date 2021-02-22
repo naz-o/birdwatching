@@ -93,15 +93,13 @@ $(document).ready(function(){
   $.get( "/getbirdswatched", function( data ) {
     $( ".resultbirdswatched" ).html( data );
   });
-});
-
-</script>
-<script>
-$('#clickme').click(function(){
-  $.get( "/buzzing", function() {
-    Console.Log("sss");
+  $('#clickme').click(function(){
+    $.get( "/buzzing", function() {
+      Console.Log("sss");
   });
 });
+});
+
 </script>
 <!--- ................BUTTON END............ --->
 
