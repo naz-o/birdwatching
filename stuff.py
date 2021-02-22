@@ -68,8 +68,6 @@ def takephoto():
         #hm
     camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
-    camera.stop_preview()
-    camera = None
     dbobject.bild = 'posts/image{}.jpg'.format(i)
     a = 0
     temperatureA=[]
