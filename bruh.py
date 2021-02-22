@@ -1,6 +1,5 @@
 import io
 import picamera
-from picamera import PiCamera
 import logging
 import socketserver
 from threading import Condition
@@ -17,7 +16,6 @@ PAGE="""\
 </body>
 </html>
 """
-#camera = PiCamera(resolution='640x480', framerate=24)
 
 class StreamingOutput(object):
     def __init__(self):
@@ -75,19 +73,6 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
 
-
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
-
-
-    output = StreamingOutput()
-    camera = PiCamera(resolution='640x480', framerate=24)
-    camera.start_recording(output, format='mjpeg')
-    try:
-        address = ('', 9000)
-        server = StreamingServer(address, StreamingHandler)
-        server.serve_forever()
-
-    finally:
-        camera.stop_recording()
