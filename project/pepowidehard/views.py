@@ -24,7 +24,8 @@ current = {
     "humidity": realtimehumidity,
     "temperature": realtimetemperature,
     "data": all,
-    "latestpicture": djangodb.objects.last()
+    "latestpicture": djangodb.objects.last(),
+    "count": len(list(djangodb.objects.values_list()))
 }
 def index(request):
     return render(request,"main.html",current)
