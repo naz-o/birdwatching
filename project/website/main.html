@@ -91,6 +91,9 @@ $(document).ready(function(){
   $.get( "/getdatatempavg", function( data ) {
     $( ".resulttempavg" ).html( data );
   });
+    $.get( "/getbirdswatched", function( data ) {
+    $( ".resultbirdswatched" ).html( data );
+  });
 
 
 });
@@ -117,7 +120,7 @@ $(document).ready(function(){
 >>>>>>> d84e8ebddb39ec45354729db5410682394ffa8c1
 
 
-  <li>Birds watched: {{count}}</li>
+  <li class="resultbirdswatched">Birds watched: </li>
 </ul>
 <ul>
   <h3>Average</h3>

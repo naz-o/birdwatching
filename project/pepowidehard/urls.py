@@ -13,6 +13,7 @@ urlpatterns = [
     path('getdatahum', views.getdatahum),
     path('buzzing', views.buzzer_button),
     path('getdatatempavg', views.getdatatempavg),
-    path('getdatahumavg', views.getdatahumavg)
+    path('getdatahumavg', views.getdatahumavg),
+    path('getbirdswatched',views.getbirdswatched),
     #path('B')
 ]
