@@ -36,14 +36,31 @@ def htag(request):
     return render(request,"main.html")
 def getdatatemp(request):
     #temperature = dhtDevice.temperature
-    return HttpResponse(str(randint(0,20)) + "C")
+    return HttpResponse("Temperature: "+str(randint(0,20)) + "C")
 def getdatahum(request):
     #humidity = dhtDevice.humidity
-    return HttpResponse(str(randint(0,100)) + "%")
-
+    return HttpResponse("Humidity: "+str(randint(0,100)) + "%")
 def buzzer_button(request):
     #buzzer.on()
     print("Buzzer on")
     #sleep(1)
     #buzzer.off()
     return HttpResponse("Did the buzzer lmao")
+def getdatatempavg(request):
+    templist = list(all.values_list("temperature",flat=True)[:5])
+    templistint=[]
+    i = 0
+    for x in templist:
+        templistint.append(float(x))
+    tempsum = sum(templistint)
+    tempvg=int(tempsum)/len(templistint)
+    return HttpResponse("Temperature: "+str(tempvg)+"C")
+def getdatahumavg(request):
+    humlist = list(all.values_list("humidity",flat=True)[:5])
+    humlistint=[]
+    i = 0
+    for x in humlist:
+        humlistint.append(float(x))
+    humsum = sum(humlistint)
+    humavg=int(humsum)/len(humlistint)
+    return HttpResponse("Humidity: "+str(humavg)+"%")
