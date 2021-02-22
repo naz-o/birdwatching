@@ -11,6 +11,7 @@ import os
 import sys
 import django
 from bruh import StreamingOutput, StreamingServer, StreamingHandler
+from http import server
 sys.path.append(
     os.path.join(os.path.dirname(__file__), 'project')
 )
