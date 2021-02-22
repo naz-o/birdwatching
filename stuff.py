@@ -20,7 +20,7 @@ from django.conf import settings
 
 from pepowidehard.models import djangodb
 try:
-    os.system("sudo service motion stop")
+    os.system("^C")
     print("stoping motion in 5")
     sleep(5)
 except:
@@ -66,7 +66,6 @@ def takephoto():
         file.write(str(i))
         file.close()
         
-    camera.capture('/extdrive/image%s.jpg' % i)
     camera.capture('./project/media/posts/image%s.jpg' % i)
     dbobject.bild = 'posts/image{}.jpg'.format(i)
     a = 0
@@ -110,11 +109,11 @@ while True:
     pir.wait_for_motion()
     print("Waiting for motion sensor to activate:")
 
-    os.system("sudo service motion stop")
+    os.system("^C")
     print("stoping motion in 5")
     sleep(5)
     takephoto()
-
-    os.system("sudo motion -b")
+    camera=None
+    os.system("sudo motion")
     print("starting motion in 5")
     sleep(5)
