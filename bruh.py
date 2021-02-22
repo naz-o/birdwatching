@@ -17,7 +17,7 @@ PAGE="""\
 </body>
 </html>
 """
-camera = PiCamera(resolution='640x480', framerate=24)
+#camera = PiCamera(resolution='640x480', framerate=24)
 
 class StreamingOutput(object):
     def __init__(self):
