@@ -121,17 +121,9 @@ chart2.render();
 	<div class="entries">
 		<h1>Raw Entries</h1>
 		<ul>
-			{% for entry in %}
-			<li>
-				asdfgh logged in
-			</li>
-			<li>
-				13.12.20 - 01:30 p.m. - 8°C - 80.8% - Picture taken
-			</li>
-			<li>
-				12.12.20 - 11:00 a.m. - 2°C - 70.1 - Buzzer activated
-			</li>
-
+			{% for entry in data %}
+			<li> {{entry.datum}} - {{entry.temperature}} - {{entry.humidity}} </li>
+			{% endfor %}
 		</ul>
 	</div>
 	</div>
