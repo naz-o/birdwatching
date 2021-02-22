@@ -105,12 +105,9 @@ server.serve_forever()
 
 
 while True:
-    pir.wait_for_motion()
-<<<<<<< HEAD
     print("Waiting for motion sensor to activate:")
+    pir.wait_for_motion()
+    print("Motion activated")
     camera.stop_recording()
     takephoto()
     camera.start_recording()
-=======
-    takephoto()
->>>>>>> 0c6144001508b7765c9f4fb84d6acbd93103a2d5
