@@ -87,6 +87,7 @@ def startstream():
             server.serve_forever()
             
         finally:
-            camera.stop_recording()
+        #    camera.stop_recording()
+            print("ayaya")
 def stopstream():
     camera.stop_recording()
