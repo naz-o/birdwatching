@@ -10,8 +10,7 @@ import adafruit_dht
 import os
 import sys
 import django
-from bruh import StreamingOutput, StreamingServer, StreamingHandler
-from http import server
+
 sys.path.append(
     os.path.join(os.path.dirname(__file__), 'project')
 )
@@ -26,7 +25,6 @@ from pepowidehard.models import djangodb
 #GPIO2 #3 Temperature and Humidity
 dbobject =  djangodb()
 camera = PiCamera()
-print("deebug")
 pir = MotionSensor(18)
 dhtDevice = adafruit_dht.DHT22(board.D2)
 
@@ -42,6 +40,10 @@ def stop_camera():
     #exit the program
     exit()
 
+file = open("db_image_id.txt","r")
+i = file.read()
+file.close()
+
 #take photo when motion is detected
 def takephoto():
     global i
@@ -49,12 +51,12 @@ def takephoto():
         print(i)
         i = int(i)
         i = i +1
-        file = open("test.txt","w")
+        file = open("db_image_id.txt","w")
         file.write(str(i))
         file.close()
     except:
         i = 1
-        file = open("test.txt","w")
+        file = open("db_image_id.txt","w")
         file.write(str(i))
         file.close()
 
@@ -70,10 +72,8 @@ def takephoto():
             temperatureA.append(temperature_c)
             humidityA.append(humidity)
             a = a + 1
-            print("Debug 1")
             sleep(2)
         except RuntimeError as error:
-            print("Debug 2")
             sleep(1)
             print(error)
             continue
@@ -83,32 +83,16 @@ def takephoto():
     dbobject.humidity = str(avg2)
     dbobject.datum = datetime.datetime.now()
     dbobject.save()
-    print("Saved data the id is{}".format(str(dbobject.id)))
-    print("The average Temperature is", round(avg,2))
-    print("The average Humidity is", round(avg2,2))
-    print('A photo has been taken')
-    sleep(5)
-    print("Debug 3")
-#assign a function that runs when motion is detected
-
-#    except RuntimeError as error:
-        # Errors happen fairly often, DHT's are hard to read, just keep going
-    #    print(error.args[0])
-    #    time.sleep(2.0)
-    #    continue
+    print("[+] Saved data the db id is: {}".format(str(dbobject.id)))
+    print("[-] The average Temperature is", round(avg,2))
+    print("[-] The average Humidity is", round(avg2,2))
+    print('[-] A photo has been taken')
 
 
-output = StreamingOutput()
-camera.start_recording(output, format='mjpeg')
-address = ('0.0.0.0', 8001)
-server = StreamingServer(address, StreamingHandler)
-server.serve_forever()
 
 
 while True:
-    print("Waiting for motion sensor to activate:")
+    print("[!] Waiting for motion sensor to activate:")
     pir.wait_for_motion()
-    print("Motion activated")
-    camera.stop_recording()
+    print("[+] Motion activated taking photo")
     takephoto()
-    camera.start_recording(output, format='mjpeg')
