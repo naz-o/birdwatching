@@ -84,8 +84,8 @@ def takephoto():
     dbobject.datum = datetime.datetime.now()
     dbobject.save()
     print("[+] Saved data the db id is: {}".format(str(dbobject.id)))
-    print("[-] The average Temperature is", round(avg,2))
-    print("[-] The average Humidity is", round(avg2,2))
+    print("[-] The average Temperature is ", round(avg,2))
+    print("[-] The average Humidity is ", round(avg2,2))
     print('[-] A photo has been taken')
 
 
