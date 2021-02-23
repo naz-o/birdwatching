@@ -100,14 +100,13 @@ body{
   }
 
   .feed{
-    width:600px;
-    height:300px;
-    border: 1px solid black;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-  }
+      width:533px;
+      height:400px;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+    }
 
 
 
@@ -129,7 +128,6 @@ body{
     padding-bottom: 20px;
   }
 
-/*----------------------- Main Start -------------------------*/
 
 /*-----------------------Button Start------------------------*/
 
@@ -215,6 +213,8 @@ body{
 
 
 /*-------------------Button End------------------*/
+/*----------------------- Main End ----------------*/
+
 
 /*-------------------Data Start------------------*/
 /*-------------------Chart Start------------------*/

@@ -121,7 +121,7 @@ chart2.render();
 	<div class="entries">
 		<h1>Raw Entries</h1>
 		<ul>
-			{% for entry in data %}
+			{% for entry in data reversed %}
 			<li> {{entry.datum}} - {{entry.temperature}} - {{entry.humidity}} </li>
 			{% endfor %}
 		</ul>
