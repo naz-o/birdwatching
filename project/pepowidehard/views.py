@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import djangodb
 from random import randint
-"""
 import board
 import adafruit_dht
 dhtDevice = adafruit_dht.DHT22(board.D2)
@@ -10,7 +9,6 @@ dhtDevice = adafruit_dht.DHT22(board.D2)
 from gpiozero import Buzzer
 from time import sleep
 buzzer = Buzzer(17)
-"""
 
 all = djangodb.objects.all()
 data= {
@@ -26,6 +24,7 @@ current = {
 def index(request):
     return render(request,"main.html",current)
 def galery_view(request):
+    data={"data":djangodb.objects.all()}
     return render(request,"galery.html",data)
 def data_view(request):
     return render(request,"data.html",dview)

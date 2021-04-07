@@ -25,7 +25,7 @@ SECRET_KEY = '0%f$+fjcwztq!+-4)hy+y7kre96fgzq9+(@9yucynsczi4#!ht'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","192.168.178.27","84.63.117.163","0.0.0.0","192.168.178.40","192.168.178.20"]
+ALLOWED_HOSTS = ["127.0.0.1","192.168.178.27","84.63.117.163","0.0.0.0","192.168.178.40","192.168.178.20","192.168.4.1"]
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'pepowide.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['website',],
+        'DIRS': ['/home/k0r/dvds/birdwatching/project/website',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,11 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/home/k0r/dvds/birdwatching/project/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")#base dir is the project directory and static is the file name
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '/home/k0r/dvds/birdwatching/project/media/'
